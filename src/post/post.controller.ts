@@ -30,6 +30,7 @@ export class PostController {
 
   @Get()
   getAllPosts(@Query('search') searchStr: string) {
+    return 'hello';
     return this.postService.findAll(searchStr);
   }
 
