@@ -10,11 +10,7 @@ async function bootstrap() {
 
   app.useStaticAssets(join(__dirname, '..', 'uploads'));
   app.useGlobalPipes(new ValidationPipe());
-  app.enableCors({
-    origin: 'http://localhost:3000/', // Specify the allowed origin(s) here
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: 'Content-Type, Accept,Authorization',
-  });
+  app.enableCors();
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
   await app.listen(5000);
